@@ -61,7 +61,7 @@ Overlapping virtual hosts will give you following error: `[warn] _default_ Virtu
 Append these lines while changing following:
 
 * DocumentRoot "/Users/teelmo/Repositories/plus/"
-* <Directory /Users/teelmo/Repositories/plus/>
+* &lt;Directory /Users/teelmo/Repositories/plus/&gt;
 
 ~~~~
 <IfModule mod_ssl.c>
