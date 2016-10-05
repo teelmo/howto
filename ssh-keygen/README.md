@@ -26,5 +26,7 @@ Now try logging into the machine, with "ssh 'remoteuser@remote'", and check in:
 to make sure we haven't added extra keys that you weren't expecting.
 ~~~~
 
+OS X users can install _ssh-copy-id_ with: `curl -L https://raw.githubusercontent.com/beautifulcode/ssh-copy-id-for-OSX/master/install.sh | sh`. See https://github.com/beautifulcode/ssh-copy-id-for-OSX
+
 ## 3. Login to remote-host without entering the password
 teelmo@localhost$ `ssh remoteuser@remotehost`
