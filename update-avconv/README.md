@@ -2,8 +2,14 @@
 
 Bash script which updates avconv to latest snapshot version on Mac OS X.
 
-[/Users/teelmo]$ `chmod 755 update-avconv`
+[/Users/teelmo]$ `chmod 755 update-avconv.sh`
 
-[/Users/teelmo]$ `sh update-avconv`
+[/Users/teelmo]$ `sh update-avconv.sh`
 
 To access script anywhere place it to `/opt/local/bin/`
+
+# Requirements
+
+`sudo port install wget`
+
+`sudo port install ffmpeg +gpl +postproc +lame +theora +libogg +vorbis  +xvid +x264 +a52 +faac +faad +dts +nonfree`
