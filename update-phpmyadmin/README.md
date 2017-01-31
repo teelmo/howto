@@ -2,7 +2,7 @@
 
 Bash script which updates phpmyadmin on Linux.
 
-[/Users/teelmo]$ `chmod 755 update-yle-dl.sh`
+[/Users/teelmo]$ `chmod 755 update-phpmyadmin.sh`
 
 [/Users/teelmo]$ `sh update-phpmyadmin.sh`
 
