@@ -12,4 +12,6 @@ To access script anywhere place it to `/opt/local/bin/`
 
 `sudo port install wget`
 
-`sudo port install ffmpeg +gpl +postproc +lame +theora +libogg +vorbis  +xvid +x264 +a52 +faac +faad +dts +nonfree`
+`sudo port install yasm`
+
+`sudo port install ffmpeg +gpl +postproc +lame +theora +libogg +vorbis +xvid +x264 +a52 +faac +faad +dts +nonfree`
