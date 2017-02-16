@@ -6,7 +6,7 @@
 `sudo find / -size +10000k -print0 | xargs -0 ls -l -h`
 
 # Repeated execution of
-`sudo du -x   -d1 -h /`
+`sudo du -x -d1 -h /`
 
 # You can also use du, and just dig into it manually.
 `du / -h --max-depth=1 | sort -h`
