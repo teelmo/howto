@@ -1,3 +1,5 @@
+# Depricated, use pip install yle-dl
+
 # Update yle-dl
 
 Bash script which updates yle-dl (https://aajanki.github.io/yle-dl/) to latest snapshot version on Mac OS X.
