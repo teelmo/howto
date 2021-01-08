@@ -4,9 +4,15 @@ Various ffmpeg related commands.
 
 ## Change aspect ratio
 
+This helps to decrease the file size. 
+
 * $ `ffmpeg -i input.mkv -vf "scale=iw/2:ih/2" half_the_frame_size.mkv`
 * $ `ffmpeg -i input.mkv -vf "scale=iw/3:ih/3" a_third_the_frame_size.mkv`
 * $ `ffmpeg -i input.mkv -vf "scale=iw/4:ih/4" a_fourth_the_frame_size.mkv`
+
+## Join subtitles and video file
+
+* $ `ffmpeg -i "file.mp4" -vf subtitles="file.srt" "output-1.mp4"`
 
 ## Join multiple .mp4 files
 
@@ -17,7 +23,7 @@ Various ffmpeg related commands.
 1. Make a file containing the files to be joined.
 
 * $ `echo file1.mp4 > list.txt`
-* $ `echo file2.mp4 >> list.txt`
+* $ `echo file2.mp4 >> list.txt` 
 
 2. Join the files.
 
