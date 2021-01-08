@@ -10,9 +10,25 @@ This helps to decrease the file size.
 * $ `ffmpeg -i input.mkv -vf "scale=iw/3:ih/3" a_third_the_frame_size.mkv`
 * $ `ffmpeg -i input.mkv -vf "scale=iw/4:ih/4" a_fourth_the_frame_size.mkv`
 
+## Split video video
+
+Forget about subtitles
+
+* $ `ffmpeg -i file.mp4 -t 00:50:00 -c copy smallfile1.mp4 -ss 00:50:00 -c copy smallfile2.mp4`
+
+Include subtitles
+
+* $ `ffmpeg -i file.mp4 -t 00:50:00  -vcodec copy -acodec copy -scodec copy smallfile1.mp4 -ss 00:50:00  -vcodec copy -acodec copy -scodec copy smallfile2.mp4`
+
 ## Join subtitles and video file
 
-* $ `ffmpeg -i "file.mp4" -vf subtitles="file.srt" "output-1.mp4"`
+This one burns the subtitles
+
+* $ `ffmpeg -i "file.mp4" -vf subtitles="file.srt" "output.mp4"`
+
+This one attaches the subtitle track
+
+* $ `ffmpeg -i file.mp4 -i file.srt -c copy -c:s mov_text output.mp4`
 
 ## Join multiple .mp4 files
 
@@ -22,8 +38,8 @@ This helps to decrease the file size.
 
 1. Make a file containing the files to be joined.
 
-* $ `echo file1.mp4 > list.txt`
-* $ `echo file2.mp4 >> list.txt` 
+* $ `echo file file1.mp4 > list.txt`
+* $ `echo file file2.mp4 >> list.txt` 
 
 2. Join the files.
 
