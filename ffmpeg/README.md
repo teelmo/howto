@@ -7,8 +7,24 @@ Various ffmpeg related commands.
 This helps to decrease the file size. 
 
 * $ `ffmpeg -i input.mkv -vf "scale=iw/2:ih/2" half_the_frame_size.mkv`
-* $ `ffmpeg -i input.mkv -vf "scale=iw/3:ih/3" a_third_the_frame_size.mkv`
-* $ `ffmpeg -i input.mkv -vf "scale=iw/4:ih/4" a_fourth_the_frame_size.mkv`
+* $ `ffmpeg -i input.mkv -vf "scale=iw/3:ih/3" a_third_the_frame_size.mkv`
+* $ `ffmpeg -i input.mkv -vf "scale=iw/4:ih/4" a_fourth_the_frame_size.mkv`
+
+*Bash script to do this for a folder*
+
+The script includes a H.264 compressor codec and also scaling to 720px in width and corresponding height (-2 makes the height diviable by two which is required sometimes).
+
+```
+for file in ./*.mp4
+do
+    fullfilename=$(basename -- "$file")
+    filename="${fullfilename%.*}"
+    extension="${fullfilename##*.}"
+
+    ffmpeg -i "$file" -vf "scale=720:-2" -vcodec libx264 -crf 28 "web/${filename} Web.${extension}"
+done
+
+```
 
 ## Split video video
 
