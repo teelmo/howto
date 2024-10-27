@@ -2,6 +2,10 @@
 
 Various ffmpeg related commands.
 
+## Compress video
+
+* $ `ffmpeg -i input -vf "scale=1280:-2" -vcodec libx265 -crf 28 output`
+
 ## Change aspect ratio
 
 This helps to decrease the file size. 
@@ -10,9 +14,9 @@ This helps to decrease the file size.
 * $ `ffmpeg -i input.mkv -vf "scale=iw/3:ih/3" a_third_the_frame_size.mkv`
 * $ `ffmpeg -i input.mkv -vf "scale=iw/4:ih/4" a_fourth_the_frame_size.mkv`
 
-*Bash script to do this for a folder*
+*Bash script to do this for a folder or copy/paste*
 
-The script includes a H.264 compressor codec and also scaling to 720px in width and corresponding height (-2 makes the height diviable by two which is required sometimes).
+The script includes a H.264 compressor codec and also scaling to 720px in width and corresponding height (`-2` makes the height diviable by two which is required sometimes).
 
 ```
 for file in ./*.mp4
@@ -25,6 +29,12 @@ do
 done
 
 ```
+
+## Remove audio
+
+Removes the first audio stream (adjust `a:{x}` to select different audio stream).
+
+* $ `ffmpeg -i input -map 0 -map -0:a:0 -c copy ouput`
 
 ## Split video video
 
