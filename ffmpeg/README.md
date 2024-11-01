@@ -4,6 +4,10 @@ Various ffmpeg related commands.
 
 ## Compress video
 
+*For web*
+* $ `ffmpeg -i input -vf "scale=1280:-2" -vcodec libx264 -crf 28 output`
+
+*For other usage*
 * $ `ffmpeg -i input -vf "scale=1280:-2" -vcodec libx265 -crf 28 output`
 
 ## Change aspect ratio
@@ -29,6 +33,10 @@ do
 done
 
 ```
+
+## Extract a frame as image
+
+* $ `ffmpeg -i inputfile.mkv -vf "select=eq(n\,0)" -q:v 3 output_image.jpg`
 
 ## Remove audio
 
