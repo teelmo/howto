@@ -54,6 +54,20 @@ Include subtitles
 
 * $ `ffmpeg -i file.mp4 -t 00:50:00  -vcodec copy -acodec copy -scodec copy smallfile1.mp4 -ss 00:50:00  -vcodec copy -acodec copy -scodec copy smallfile2.mp4`
 
+# Speed up and slowdown
+
+Speed up 50%
+
+* $ `ffmpeg -i input.mp4 -filter:v "setpts=0.5*PTS" -an output.mp4`
+
+Slow down 200%
+
+* $ `ffmpeg -i input.mp4 -filter:v "setpts=2.0*PTS" -an output.mp4`
+
+Speed up video and audio
+
+* $ `ffmpeg -i input.mp4 -vf "setpts=2.0*PTS" -af "atempo=0.5" output.mp4`
+
 ## Join subtitles and video file
 
 This one burns the subtitles
