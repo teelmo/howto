@@ -4,10 +4,12 @@ Various ffmpeg related commands.
 
 ## Compress video
 
-*For web*
+For web
+
 * $ `ffmpeg -i input -vf "scale=1280:-2" -vcodec libx264 -scodec copy -crf 28 output`
 
-*For other usage*
+For other usage
+
 * $ `ffmpeg -i input -vf "scale=1280:-2" -vcodec libx265 -scodec copy -crf 28 output`
 
 ## Change aspect ratio
